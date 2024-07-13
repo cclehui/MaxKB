@@ -27,11 +27,19 @@ from common.response.result import Result
 from smartdoc import settings
 from smartdoc.conf import PROJECT_DIR
 
+from testapp.views import home
+from django.contrib import admin
+
+
 urlpatterns = [
     path("api/", include("users.urls")),
     path("api/", include("dataset.urls")),
     path("api/", include("setting.urls")),
-    path("api/", include("application.urls"))
+    path("api/", include("application.urls")),
+    
+    # cclehui_test
+    # path('admin/', admin.site.urls),
+    path('testapp/', home, name='home'),  # Add this line
 ]
 
 
